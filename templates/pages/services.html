@@ -1,0 +1,220 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="page-hero container">
+    <p class="eyebrow">DRW SERVICES / SOFTWARE DELIVERY</p>
+    <h1>Useful software.<br><span>Clearly scoped.</span></h1>
+    <p>
+        We start by understanding the problem and agreeing on what success means.
+        Then we propose a practical scope, timeline, and way forward.
+    </p>
+    <a class="button" href="{% url 'contact' %}">
+        Discuss your requirements ↗
+    </a>
+</section>
+
+<section class="section container">
+
+    <div class="section-heading">
+        <p class="eyebrow">OUR SERVICE AREAS</p>
+        <h2>Start with the problem.</h2>
+        <p class="section-intro">
+            Every engagement is defined around the customer's needs.
+            The exact scope depends on requirements, team capacity,
+            and technical fit.
+        </p>
+    </div>
+
+    <div class="service-list">
+
+        <!-- 01: Websites & Web Applications -->
+        <article class="service-row" id="web">
+            <span class="card-number">01</span>
+
+            <div class="service-main">
+                <h2>
+                    <span class="service-icon" aria-hidden="true">↗</span>
+                    Websites & Web Applications
+                </h2>
+                <p>
+                    For teams that need a clear, reliable online presence
+                    or a focused web tool.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="small-heading">POTENTIAL DELIVERABLES</h3>
+                <ul>
+                    <li>Requirements and scope definition</li>
+                    <li>Responsive implementation</li>
+                    <li>Accessibility and browser checks</li>
+                    <li>Deployment and handover</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 02: Custom Software Development -->
+        <article class="service-row" id="custom">
+            <span class="card-number">02</span>
+
+            <div class="service-main">
+                <h2>
+                    <span class="service-icon" aria-hidden="true">⌘</span>
+                    Custom Software Development
+                </h2>
+                <p>
+                    For a well-defined workflow that could benefit
+                    from a small, purpose-built tool.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="small-heading">POTENTIAL DELIVERABLES</h3>
+                <ul>
+                    <li>Problem and workflow discovery</li>
+                    <li>Agreed features and milestones</li>
+                    <li>Testing against acceptance criteria</li>
+                    <li>Documentation and handover</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 03: Existing Software Improvement -->
+        <article class="service-row" id="improvement">
+            <span class="card-number">03</span>
+
+            <div class="service-main">
+                <h2>
+                    <span class="service-icon" aria-hidden="true">⟳</span>
+                    Existing Software Improvement
+                </h2>
+                <p>
+                    For teams that want help investigating a specific bug,
+                    performance issue, or maintenance need.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="small-heading">POTENTIAL DELIVERABLES</h3>
+                <ul>
+                    <li>Initial review and diagnosis</li>
+                    <li>Prioritized improvement proposal</li>
+                    <li>Targeted changes and testing</li>
+                    <li>Before-and-after reporting where measurable</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 04: AI Apps & Development -->
+        <article class="service-row" id="ai">
+            <span class="card-number">04</span>
+
+            <div class="service-main">
+                <h2>
+                    <i class="bi bi-cpu service-icon"
+                       aria-hidden="true"></i>
+                    AI Apps & Development
+                </h2>
+                <p>
+                    Intelligent applications and machine learning solutions
+                    designed to address practical problems and automate
+                    workflows.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="small-heading">POTENTIAL DELIVERABLES</h3>
+                <ul>
+                    <li>AI-powered applications</li>
+                    <li>Machine learning model development</li>
+                    <li>AI integration and automation</li>
+                    <li>Custom intelligent software</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 05: Low Level Development -->
+        <article class="service-row" id="low-level">
+            <span class="card-number">05</span>
+
+            <div class="service-main">
+                <h2>
+                    <i class="bi bi-terminal service-icon"
+                       aria-hidden="true"></i>
+                    Low Level Development
+                </h2>
+                <p>
+                    Software closer to the hardware, focusing on systems
+                    programming, operating systems, and performance-oriented
+                    engineering.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="small-heading">POTENTIAL DELIVERABLES</h3>
+                <ul>
+                    <li>Systems and kernel development</li>
+                    <li>Embedded software development</li>
+                    <li>Hardware-software integration</li>
+                    <li>Performance-oriented programming</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 06: Game Development -->
+        <article class="service-row" id="game-dev">
+            <span class="card-number">06</span>
+
+            <div class="service-main">
+                <h2>
+                    <i class="bi bi-controller service-icon"
+                       aria-hidden="true"></i>
+                    Game Development
+                </h2>
+                <p>
+                    Interactive digital experiences, combining gameplay
+                    systems, technical implementation, and creative design.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="small-heading">POTENTIAL DELIVERABLES</h3>
+                <ul>
+                    <li>Game development and prototyping</li>
+                    <li>Gameplay mechanics and systems</li>
+                    <li>Interactive 2D and 3D experiences</li>
+                    <li>Optimization and implementation</li>
+                </ul>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="notice">
+        <strong>Before we begin:</strong>
+        We confirm feasibility, deliverables, ownership, payment terms,
+        and timelines in writing. We only accept work that we believe
+        we can deliver responsibly.
+    </div>
+
+</section>
+
+<section class="container cta-section">
+    <div class="cta-panel">
+        <div>
+            <p class="eyebrow">NEXT STEP</p>
+            <h2>Tell us what needs to work better.</h2>
+            <p>
+                A short introduction is enough to begin.
+                Please don't send confidential data or credentials.
+            </p>
+        </div>
+
+        <a class="button button-light" href="{% url 'contact' %}">
+            Contact the team ↗
+        </a>
+    </div>
+</section>
+
+{% endblock %}

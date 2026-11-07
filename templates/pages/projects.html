@@ -1,0 +1,42 @@
+{% extends 'base.html' %}{% block content %}
+<section class="page-hero container"><p class="eyebrow">PROJECTS / RESEARCH / EXPERIMENTS</p><h1>Show the work.<br><span>Tell the truth.</span></h1><p>We want this page to grow through evidence: working demonstrations, technical write-ups, measured results, and clear project status.</p></section>
+<section class="section container"><div class="section-heading"><p class="eyebrow">CURRENT AREAS</p><h2>A transparent work log.</h2><p class="section-intro">The entries below describe areas of experience or exploration, not claims that every item is a released product or completed client engagement.</p></div>
+<div class="project-grid">
+
+    {% for project in projects %}
+
+    <article class="project-card">
+
+        <div class="project-visual">
+            <span>DX<span class="visual-slash">/</span>{{ forloop.counter|stringformat:"02d" }}</span>
+        </div>
+
+        <div class="project-copy">
+
+            <p class="eyebrow">{{ project.category }}</p>
+
+            <h2>{{ project.title }}</h2>
+
+            <span class="status-label">
+                {{ project.status }}
+            </span>
+
+            <p>{{ project.summary }}</p>
+
+            <a href="{% url 'project_detail' slug=project.slug %}"
+               class="text-link">
+                Learn More →
+            </a>
+
+        </div>
+
+    </article>
+
+    {% empty %}
+
+    <p>No projects published yet.</p>
+
+    {% endfor %}
+
+</div>
+<div class="notice">Have a public demo or verified project result to add? We'll publish it only after checking that the information is accurate and that we have permission to share it.</div><div class="section-action"><a class="text-link" href="{% url 'contact' %}">Discuss a collaboration →</a></div></section>{% endblock %}

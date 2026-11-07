@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="page-hero container">
+
+    <p class="eyebrow">
+        {{ project.category }}
+    </p>
+
+    <h1>
+        {{ project.title }}
+    </h1>
+
+    <span class="status-label">
+        {{ project.status }}
+    </span>
+
+    <p>{{ project.summary }}</p>
+
+</section>
+
+<section class="section container">
+
+    <div class="section-heading">
+        <p class="eyebrow">PROJECT DETAILS</p>
+        <h2>About this project.</h2>
+    </div>
+
+    <div class="project-description">
+        {{ project.description|linebreaks }}
+    </div>
+
+    <a href="{% url 'projects' %}" class="text-link">
+        ← Back to projects
+    </a>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<section class="section container contact-layout"><div class="contact-intro"><p class="eyebrow">CONTACT / PROJECT ENQUIRIES</p><h1>Tell us what<br><span>you're building.</span></h1><p>Share the problem you're trying to solve, the outcome you need, and any timing constraints. We'll review your enquiry and decide on a sensible next step.</p><div class="contact-promise"><span class="status-dot"></span><span>Clear scope. No pressure. Honest expectations.</span></div><div class="contact-note"><strong>For your security</strong><p>Don't include passwords, OTPs, payment details, private keys, or sensitive personal information. We'll request only the information needed to discuss your enquiry.</p></div></div>
+<div class="form-panel"><h2>Project enquiry</h2><p class="muted">Fields marked required must be completed.</p><form method="post" class="contact-form" novalidate>{% csrf_token %}
+<div class="form-row"><label>Full name {{ form.name }}{% for e in form.name.errors %}<small class="field-error">{{ e }}</small>{% endfor %}</label><label>Work email {{ form.email }}{% for e in form.email.errors %}<small class="field-error">{{ e }}</small>{% endfor %}</label></div>
+<label>Organization <span class="muted">(optional)</span> {{ form.organization }}{% for e in form.organization.errors %}<small class="field-error">{{ e }}</small>{% endfor %}</label>
+<label>What can we help with? {{ form.service }}</label>
+<label>Tell us a little about the project {{ form.message }}{% for e in form.message.errors %}<small class="field-error">{{ e }}</small>{% endfor %}</label>
+<div class="honeypot" aria-hidden="true"><label>Leave this field empty {{ form.website }}</label></div>
+<p class="form-privacy">Please don't include passwords, sensitive personal information, or confidential data in this form.</p><button class="button" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>
+{% if form.non_field_errors %}<p class="form-feedback error">{{ form.non_field_errors }}</p>{% endif %}</form></div></section>{% endblock %}
