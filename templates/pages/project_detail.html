@@ -28,7 +28,7 @@
     </div>
 
     <div class="project-description">
-        {{ project.description|linebreaks|safe }}
+        {{ project.description|safe|linebreaks }}
     </div>
 
     <a href="{% url 'projects' %}" class="text-link">
