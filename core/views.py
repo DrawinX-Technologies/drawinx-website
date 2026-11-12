@@ -7,21 +7,21 @@ def services(request): return render(request, "pages/services.html", {"page_titl
 def divisions(request): return render(request, "pages/divisions.html", {"page_title": "Divisions & Initiatives"})
 def projects(request):
     projects = Project.objects.all().order_by("created_at")
+    open_source_projects = OpenSourceProject.objects.filter(
+            is_published=True,
+        )
 
     return render(request, "pages/projects.html", {
         "page_title": "Projects & Research",
-        "projects": projects
+        "projects": projects,
+        "open_source_projects": open_source_projects
     })
 def about(request): return render(request, "pages/about.html", {"page_title": "About"})
 def privacy(request): return render(request, "pages/privacy.html", {"page_title": "Privacy Notice"})
 def project_detail(request, slug):
     project = get_object_or_404(Project, slug=slug)
-    open_source_projects = OpenSourceProject.objects.filter(
-        is_published=True
-    )
 
     return render(request, "pages/project_detail.html", {
         "project": project,
         "page_title": project.title,
-        "open_source_projects": open_source_projects
     })
