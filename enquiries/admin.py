@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Enquiry, Project
+from .models import Enquiry, Project, OpenSourceProject
 
 @admin.register(Enquiry)
 class EnquiryAdmin(admin.ModelAdmin):
@@ -13,3 +13,18 @@ class EnquiryAdmin(admin.ModelAdmin):
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ("title", "slug", "category", "status")
     prepopulated_fields = {"slug": ("title",)}
+
+@admin.register(OpenSourceProject)
+class OpenSourceProjectAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "division",
+        "status",
+        "is_published"
+    )
+
+    list_filter = ("division", "status", "is_published")
+
+    search_fields = ("title", "description", "division")
+    

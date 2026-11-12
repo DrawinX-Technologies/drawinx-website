@@ -39,4 +39,57 @@
     {% endfor %}
 
 </div>
+
+<section class="section container">
+
+    <div class="section-heading">
+        <p class="eyebrow">OPEN-SOURCE DEVELOPMENT</p>
+        <h2>Open-Source Projects.</h2>
+        <p class="section-intro">
+            These are open-source projects developed by the other divisions of DrawinX Technologies.
+        </p>
+    </div>
+
+    <div class="project-grid">
+
+        {% for project in open_source_projects %}
+
+        <article class="project-card">
+
+            <div class="project-visual">
+                <span>DX<span class="visual-slash">/</span>OSS</span>
+            </div>
+
+            <div class="project-copy">
+
+                <p class="eyebrow">{{ project.division }}</p>
+
+                <h2>{{ project.title }}</h2>
+
+                <span class="status-label">
+                    {{ project.status }}
+                </span>
+
+                <p>{{ project.description }}</p>
+
+                <a href="{{ project.repository_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-link">
+                    View Repository ↗
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <p>No open-source projects published yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
 <div class="notice">Have a public demo or verified project result to add? We'll publish it only after checking that the information is accurate and that we have permission to share it.</div><div class="section-action"><a class="text-link" href="{% url 'contact' %}">Discuss a collaboration →</a></div></section>{% endblock %}

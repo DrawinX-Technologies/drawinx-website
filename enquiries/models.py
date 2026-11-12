@@ -34,3 +34,25 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+class OpenSourceProject(models.Model):
+
+    division = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    repository_url = models.URLField()
+
+    status = models.CharField(
+        max_length=100,
+        default="In Development"
+    )
+
+    is_published = models.BooleanField(default=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["division", "title"]
+
+    def __str__(self):
+        return self.title
